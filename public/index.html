@@ -307,7 +307,7 @@ app.post("/upload-audio", upload.single("audio"), (req, res) => {
   const outputPath = path.join("uploads", outputFile);
 
   ffmpeg(inputPath)
-    .audioBitrate(64) 
+    .audioBitrate(64)
     .save(outputPath)
     .on("end", () => {
       res.json({
